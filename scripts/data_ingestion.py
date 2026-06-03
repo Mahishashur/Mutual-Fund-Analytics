@@ -1,26 +1,24 @@
 from pathlib import Path
 import pandas as pd
 
-folder=Path("data/raw")
+data_directory = Path("data/raw")
 
-files=folder.glob("*.csv")
+csv_files = data_directory.glob("*.csv")
 
-for file in files:
-
-    print("\n"+"="*40)
-
-    print(file.name)
-
-    df=pd.read_csv(file)
-
+for csv_file in csv_files:
+    print("\n" + "=" * 40)
+    print(csv_file.name)
+    
+    data_frame = pd.read_csv(csv_file)
+    
     print("Shape:")
-    print(df.shape)
-
+    print(data_frame.shape)
+    
     print("\nColumns:")
-    print(df.columns)
-
+    print(data_frame.columns)
+    
     print("\nTypes:")
-    print(df.dtypes)
-
+    print(data_frame.dtypes)
+    
     print("\nSample:")
-    print(df.head())
+    print(data_frame.head())
