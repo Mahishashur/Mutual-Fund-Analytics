@@ -1,21 +1,21 @@
 import requests
 import pandas as pd
 
-code=125497
+scheme_code = 125497
 
-url=f"https://api.mfapi.in/mf/{code}"
+api_endpoint = f"https://api.mfapi.in/mf/{scheme_code}"
 
-r=requests.get(url)
+response = requests.get(api_endpoint)
 
-data=r.json()
+response_content = response.json()
 
-df=pd.DataFrame(
-data["data"]
+mutual_fund_data = pd.DataFrame(
+    response_content["data"]
 )
 
-df.to_csv(
-"data/raw/live_nav.csv",
-index=False
+mutual_fund_data.to_csv(
+    "data/raw/live_nav.csv",
+    index=False
 )
 
-print("Done")
+print("Ok")
