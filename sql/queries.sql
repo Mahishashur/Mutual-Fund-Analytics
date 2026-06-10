@@ -1,6 +1,5 @@
 -- 1 Average NAV
-SELECT AVG(nav)
-FROM fact_nav;
+SELECT AVG(nav) FROM fact_nav;
 
 
 -- 2 Transaction Count
